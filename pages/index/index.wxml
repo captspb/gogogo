@@ -1,0 +1,156 @@
+<!--index.wxml-->
+<view class="main-container">
+  <view class="banner-section">
+    <view class="left">
+
+    </view>
+    <view class="right">
+      <swiper  indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150"/>
+          </swiper-item>
+        </block>
+      </swiper> 
+    </view> 
+
+  </view>
+
+  <view class="main-content">
+    <view class="main-content-head">
+      <text class="left">爱无国境</text>
+      <text  class="right">最优惠精彩不可错过</text>
+    </view>
+
+    <view class="traval-items">
+      <view class="traval-item" wx:for="{{countDownArr}}">
+        <view class="item-index">01</view>
+        <image class="buy-btn"></image>
+        <view class="timer">
+          <view class="text-end">距结束</view>
+          <view class="timer-num">{{item.day}}</view>
+          <view class="text-day">天</view>
+          <view class="timer-num">{{item.hou}}</view>
+          <view>：</view>
+          <view class="timer-num">{{item.min}}</view>
+          <view>：</view>
+          <view class="timer-num">{{item.sec}}</view>
+        </view>
+        <image src="http://file.gzl.cn/group1/M00/1D/60/wKkBHls8yy2AW6JlAAB9MMxGsvo375.jpg"></image>
+        <text class="traval-name line-1">奥地利+捷克+匈牙利11-13日游>全含欧洲自营 四五星 26人小团 布拉格 美泉宫 纽约宫下午茶 多瑙河游船 黑维茨温泉人          </text>
+        <view class="line-2">
+          <text class="price">¥6000</text>
+          <text class="date">团期：5-30、6-20、7-14</text>         
+        </view>
+        <view class="more-infos">
+          <view class="more-info">
+            <view class="point"></view>
+            <text>欧洲4国</text>
+          </view>
+           <view class="more-info">
+            <view class="point"></view>
+            <text>欧洲4国</text>
+          </view>
+           <view class="more-info">
+            <view class="point"></view>
+            <text>欧洲4国</text>
+          </view>
+        </view>       
+      </view>    
+    </view>
+    <view class="coming-seckill">
+      <view class="head">
+        <view class="left">即将开始的秒杀</view>
+        <view class="right">可放入提醒哦</view>
+      </view>
+       <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+       <view class="kill-items">
+            <view class="kill-item" wx:for="{{secKillDatas}}"  wx:for-index="index">
+              <image src="http://file.gzl.cn/group1/M00/1D/60/wKkBHls8yy2AW6JlAAB9MMxGsvo375.jpg"></image>
+              <view class="line-1">
+                德国法国瑞士意大利欧洲4国11-13日
+              </view>
+               <view class="line-2">
+                <view class="discount-price">¥6000</view>
+                <view class="price">¥8000</view>
+              </view>
+              <view class="tip-btn {{item.isRemind==1?'tip-btn-setted':''}}" bindtap='setTip' data-index="{{index}}">
+                  <image src="" class="tip-icon"></image>
+                  <text>设提醒</text>
+              </view>
+            </view>
+           
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="hot-recomends">
+      <image src="http://file.gzl.cn/group1/M00/1D/60/wKkBHls8yy2AW6JlAAB9MMxGsvo375.jpg" class="head-img"></image>
+      <view class="title">热门推荐</view>
+      <view class="hot-recomend-hotel hot-recomend-hotel-travel">
+        <view class="left">
+          <view class="line-1">
+            臻逸·猎奇 南极阿根廷18/法国日丽号奢华游轮/穿南极
+          </view>
+          <view class="line-2">
+            <view class="label">轻奢旅行</view>
+            <view class="label">分期</view>
+            <view class="label">休闲</view>
+          </view>
+          <view class="line-3">
+            ¥12900
+          </view>
+        </view>
+        <view class="right">
+          <view class="label">跟团 广州出发</view>
+          <image src="http://file.gzl.cn/group1/M00/1D/60/wKkBHls8yy2AW6JlAAB9MMxGsvo375.jpg"></image>
+        </view>
+      </view>
+
+       <view class="hot-recomend-hotel hot-recomend-hotel-visa">
+        <view class="left">
+          <view class="line-1">
+            臻逸·猎奇 南极阿根廷18/法国日丽号奢华游轮/穿南极
+          </view>
+          <view class="line-2">
+             <view class="success-rate">
+              <view class="left">成功率</view>
+              <view class="right">100%</view>
+            </view>
+          </view>
+          <view class="line-3">
+            ¥12900
+          </view>
+        </view>
+        <view class="right">
+          <view class="label">签证</view>
+          <image src="http://file.gzl.cn/group1/M00/1D/60/wKkBHls8yy2AW6JlAAB9MMxGsvo375.jpg"></image>
+        </view>
+      </view>
+
+       <view class="hot-recomend-hotel hot-recomend-hotel-hotel">
+        <view class="left">
+          <view class="line-1">
+            臻逸·猎奇 南极阿根廷18/法国日丽号奢华游轮/穿南极
+          </view>
+          <view class="line-2">
+            <view class="stars">
+              <image src="" class="star" wx:for="{{starsData}}"></image>
+            </view>
+          </view>
+          <view class="line-3">
+            ¥12900
+          </view>
+        </view>
+        <view class="right">
+          <view class="label">酒店</view>
+          <image src="http://file.gzl.cn/group1/M00/1D/60/wKkBHls8yy2AW6JlAAB9MMxGsvo375.jpg"></image>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="theh"></view>
+  </view>
+</view>

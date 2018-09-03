@@ -1,0 +1,59 @@
+/* pages/userCenter/userCenter.wxss */
+.user-main-container {
+ padding:0 60rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+.user-info-panel {
+  width: 100%;
+  height: 370rpx;
+  background: tomato;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+
+.user-info-panel .left .line-1 {
+  color:#fff;
+  font-style: italic;
+}
+.user-info-panel .left .line-2 {
+  color:#fff;
+  font-size: 48rpx;
+}
+
+.user-profile {
+  width:100rpx;
+  height:100rpx;
+  border-radius: 100%;
+  border:5rpx solid #fff;
+}
+.my-item {
+  display: flex;
+  justify-content: space-between;
+  height: 120rpx;
+  align-items: center;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 0 30rpx 0 20rpx;
+}
+.my-item .left {
+  display: flex;
+  align-items: center;
+}
+
+.my-item-icon{
+  width: 40rpx;
+  height: 40rpx;
+  background: tomato;
+  margin-right: 28rpx;
+}
+
+
+.arrow-right {
+  width: 14.1rpx;
+  height: 22.6rpx;
+  background: tomato;
+}
