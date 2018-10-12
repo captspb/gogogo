@@ -113,7 +113,14 @@ swiper image {
   z-index: 3;
   display: block;
   border-top-right-radius: 30rpx;
-  
+  font-size:30rpx;
+  text-align: center;
+  line-height: 55rpx;
+  padding:0;
+}
+.traval-item button::after{
+  border: none;
+  outline: none;
 }
 .traval-item .more-info {
   display: flex;
@@ -372,4 +379,87 @@ color: #878787;
   letter-spacing: 0; 
   border-top-left-radius: 20rpx;
 
+}
+
+.register-panel-cover {
+  width: 100%;
+  height:100%;
+  position: fixed;
+  bottom:0;
+  left:0;
+  background: rgba(0, 0, 0, .7);
+  z-index:9;
+}
+
+.close {
+  width:50rpx;
+  height: 50rpx;
+}
+
+.register-panel {
+  box-sizing: border-box;
+  height: 800rpx;
+  width:100%;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  background: #FFFFFF;
+  border-top-right-radius: .4rem;
+  border-top-left-radius: .4rem;
+  padding: 30rpx 42rpx;
+}
+
+.register-panel .head {
+  height: 100rpx;
+}
+
+.register-form .input-item {
+  border-bottom: 1px solid #DEDFE0;
+  height: 110rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+.register-form .input-item input {
+  height: 100%;
+  width:100%;
+  font-size: 34rpx;
+  color: #252126;
+}
+
+.get-verify {
+  position: absolute;
+  top: 10rpx;
+  right:20rpx;
+  border-radius: 2rpx;
+  width:210rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #413D4C;
+  border: 1px solid #9B9B9B;
+  background: #FFFFFF;
+}
+
+.get-verify::after {
+  border: none;
+}
+
+.register-tip {
+  font-size: 28rpx;
+  color: #878787;
+}
+
+.register-btn {
+  background-image: linear-gradient(-135deg, #FFE500 0%, #FFCC00 100%);
+border-radius: 4px;
+height: 100rpx;
+width: 670rpx;
+text-align: center;
+line-height: 100rpx;
+margin: 60rpx auto;
+
+}
+.register-btn::after{
+  border:none;
 }

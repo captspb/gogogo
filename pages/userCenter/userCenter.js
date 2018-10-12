@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: 'userCenter',
+      title: '个人中心',
     })
   },
 

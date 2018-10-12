@@ -11,15 +11,8 @@ const travalProDatas = [
       hour: 11,
       minute: 11,
       second: 11
-    },
-    countTime:{
-      countDay:'',
-      countHour: '',
-      countMinute: '',
-      countSecond: ''
     }
-
-
+   
   }, 
   {
     startTime: {
@@ -29,13 +22,8 @@ const travalProDatas = [
       hour: 12,
       minute: 11,
       second: 11
-    },
-    countTime: {
-      countDay: '',
-      countHour: '',
-      countMinute: '',
-      countSecond: ''
     }
+   
   }
 ]
 const secKillDatas= [
@@ -56,9 +44,56 @@ Page({
     autoplay: true,
     interval: 4000,
     duration: 1000,
-    starsData:[1,1,1,1]
+    starsData:[1,1,1,1],
+    registerShow:0,
+    currentTime:10,
+    getCodeDisable:0,
+    time:"获取验证码"
+    
   },
   //事件处理函数
+  showRegister:function(){
+    this.setData({
+      registerShow: 1
+    })
+
+   
+  },
+  closeRegister:function(){
+    this.setData({
+      registerShow: 0
+    })
+  },
+  getCode: function (options) {
+    var that = this;
+    var currentTime = that.data.currentTime;
+    that.setData({
+      time: currentTime + 'S',
+      getCodeDisable: true
+    })
+   var interval = setInterval(function () {
+      that.setData({
+        time: (currentTime - 1) + 'S'
+      })
+      currentTime--;
+      if (currentTime <= 0) {
+        clearInterval(interval)
+        that.setData({
+          time: '重新获取',
+          currentTime: 10,
+          getCodeDisable: false
+        })
+      }
+    }, 1000)
+  },
+  formSubmit:function(e){
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    wx.showToast({
+      title: '验证码输入错误',
+      icon: 'none',
+      duration: 2000
+    })
+  },
   setTip: function(e) {
     var index = e.currentTarget.dataset.index
     console.log(index)
@@ -132,7 +167,6 @@ Page({
         }
         countDownArr.push(obj)
 
-        console.log(obj)
         totalSecond--;
         if (totalSecond < 0) {
           clearInterval(interval);
@@ -143,7 +177,6 @@ Page({
 
       })
 
-      console.log(countDownArr)
       this.setData({
         countDownArr: countDownArr
       })

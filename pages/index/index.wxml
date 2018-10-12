@@ -1,5 +1,27 @@
 <!--index.wxml-->
 <view class="main-container">
+  <view class="register-panel-cover" wx:if="{{registerShow}}">
+    <view class="register-panel">
+      <view class="head">
+        <image class="close" bindtap="closeRegister" src="../../images/close.png"></image>
+      </view>
+      <view class="text-h1">手机号登录</view>
+      <form bindsubmit="formSubmit" class="register-form">
+        <view class="input-item">
+          <input name="phoneNumber" placeholder="手机号" />
+        </view>
+         <view class="input-item">
+          <input name="verifyCode" placeholder="验证码" style="width:60%" />
+          <button class="get-verify" bindtap="getCode" disabled="{{getCodeDisable}}">            
+            {{time}}             
+          </button>
+        </view>
+        <view class="register-tip">若手机号码未注册，易起行将为您注册账号</view>
+       
+        <button formType="submit" class="register-btn">登录</button>
+      </form>
+    </view>
+  </view>
   <view class="banner-section">
     <view class="left">
 
@@ -24,9 +46,10 @@
     </view>
 
     <view class="traval-items">
-      <view class="traval-item" wx:for="{{countDownArr}}">
+      <view class="traval-item" wx:for="{{countDownArr}}" bindtap="showRegister">
         <view class="item-index">01</view>
-        <image class="buy-btn"></image>
+        <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="buy-btn">去抢购</button> -->
+        <view class="buy-btn" >去抢购</view>
         <view class="timer">
           <view class="text-end">距结束</view>
           <view class="timer-num">{{item.day}}</view>

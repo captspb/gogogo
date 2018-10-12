@@ -81,3 +81,9 @@ input.placeholder,textarea.placeholder{color:#ccc;font-weight:300}
   background: yellow;
   margin-right: 10rpx;
 }
+
+.text-h1 {
+  font-size: 40rpx;
+  color: #413D4C;
+  font-weight: bold;
+}
